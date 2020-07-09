@@ -1,0 +1,40 @@
+@extends('layouts.admin')
+@section('content')
+
+<div class="card">
+    <div class="card-header">
+        {{ trans('global.edit') }} {{ trans('cruds.tipologiaImmobili.title_singular') }}
+    </div>
+
+    <div class="card-body">
+        <form method="POST" action="{{ route("admin.tipologia-immobilis.update", [$tipologiaImmobili->id]) }}" enctype="multipart/form-data">
+            @method('PUT')
+            @csrf
+            <div class="form-group">
+                <label for="insieme">{{ trans('cruds.tipologiaImmobili.fields.insieme') }}</label>
+                <input class="form-control {{ $errors->has('insieme') ? 'is-invalid' : '' }}" type="text" name="insieme" id="insieme" value="{{ old('insieme', $tipologiaImmobili->insieme) }}">
+                @if($errors->has('insieme'))
+                    <span class="text-danger">{{ $errors->first('insieme') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.tipologiaImmobili.fields.insieme_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label class="required" for="nome">{{ trans('cruds.tipologiaImmobili.fields.nome') }}</label>
+                <input class="form-control {{ $errors->has('nome') ? 'is-invalid' : '' }}" type="text" name="nome" id="nome" value="{{ old('nome', $tipologiaImmobili->nome) }}" required>
+                @if($errors->has('nome'))
+                    <span class="text-danger">{{ $errors->first('nome') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.tipologiaImmobili.fields.nome_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-danger" type="submit">
+                    {{ trans('global.save') }}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@endsection
