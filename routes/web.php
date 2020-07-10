@@ -176,6 +176,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('client-profiles/ckmedia', 'ClientProfileController@storeCKEditorImages')->name('client-profiles.storeCKEditorImages');
     Route::resource('client-profiles', 'ClientProfileController');
 
+    // Fatturas
+    Route::delete('fatturas/destroy', 'FatturaController@massDestroy')->name('fatturas.massDestroy');
+    Route::resource('fatturas', 'FatturaController');
+
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {

@@ -94,4 +94,7 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
     // Client Profiles
     Route::post('client-profiles/media', 'ClientProfileApiController@storeMedia')->name('client-profiles.storeMedia');
     Route::apiResource('client-profiles', 'ClientProfileApiController');
+
+    // Fatturas
+    Route::apiResource('fatturas', 'FatturaApiController');
 });

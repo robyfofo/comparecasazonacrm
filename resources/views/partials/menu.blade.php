@@ -623,6 +623,18 @@
                         </a>
                     </li>
                 @endcan
+                @can('fattura_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.fatturas.index") }}" class="nav-link {{ request()->is('admin/fatturas') || request()->is('admin/fatturas/*') ? 'active' : '' }}">
+                            <i class="fa-fw nav-icon fas fa-cogs">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.fattura.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
                 <li class="nav-item">
                     <a href="{{ route("admin.systemCalendar") }}" class="nav-link {{ request()->is('admin/system-calendar') || request()->is('admin/system-calendar/*') ? 'active' : '' }}">
                         <i class="fas fa-fw fa-calendar nav-icon">

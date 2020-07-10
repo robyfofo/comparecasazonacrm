@@ -682,6 +682,26 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => '169',
+                'title' => 'fattura_create',
+            ],
+            [
+                'id'    => '170',
+                'title' => 'fattura_edit',
+            ],
+            [
+                'id'    => '171',
+                'title' => 'fattura_show',
+            ],
+            [
+                'id'    => '172',
+                'title' => 'fattura_delete',
+            ],
+            [
+                'id'    => '173',
+                'title' => 'fattura_access',
+            ],
+            [
+                'id'    => '174',
                 'title' => 'profile_password_edit',
             ],
         ];
